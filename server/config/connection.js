@@ -5,6 +5,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false
-});
+}).then(res => console.log("connected"))
+.catch(err => console.log(err));
 
 module.exports = mongoose.connection;
